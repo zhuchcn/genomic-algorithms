@@ -2,7 +2,7 @@ import unittest
 from distance import HammingDistance, LevenshteinDistance, ShortestDetour
 
 
-class DistanceTest(unittest.TestCase):
+class TestDistance(unittest.TestCase):
 
     def test_hamming_distance(self):
         dis = HammingDistance("AAATAATCCGAG", "AAATAATCCGAG")
