@@ -2,6 +2,7 @@
 #include "EditDistance.h"
 #include <string>
 #include <limits>
+#include <exception>
 
 class HammingDistance : public EditDistance {
     private:
@@ -9,6 +10,11 @@ class HammingDistance : public EditDistance {
     
     public:
     explicit HammingDistance(const std::string& x, const std::string& y) :
-        EditDistance(x, y, INF, 0, 1) {};
+        EditDistance(x, y, INF, 0, 1) {
+            if(x.length() != y.length()) {
+                std::string msg = "Undefined for sequences of unequal length.";
+                throw std::invalid_argument(msg);
+            }
+        };
     ~HammingDistance() {};
 };

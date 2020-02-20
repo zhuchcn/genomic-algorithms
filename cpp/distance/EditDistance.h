@@ -23,7 +23,7 @@ class EditDistance {
     double getShift() const { return shift_; };
     double getMatch() const { return match_; };
     double getMismatch() const { return mismatch_; };
-    std::vector<std::vector<double> >* getMatrix() const { return matrix_; };
+    const std::vector<std::vector<double> >* const getMatrix() const { return matrix_; };
     int getScore() const { return score_; };
 
     void setX(std::string x) { x_ = x; };
