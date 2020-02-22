@@ -29,3 +29,15 @@ TEST_CASE("Testing Smith Watterman alignment", "[SmithWatterman]") {
         REQUIRE(matrix.back().back() == 10);
     }
 }
+
+TEST_CASE("Testing semi-global alignment", "[SemiGlobalAlignment]") {
+    SECTION("Testing two equal strings") {
+        SmithWaterman a (
+            "AAGCTAGGGGCGACAGTG", 
+            "CTTTGCAAGCTCGGTGGCGAAGTCGTCA"
+        );
+        a.printAlignment();
+        auto matrix = a.matrix();
+        REQUIRE(matrix.back().back() == 9);
+    }
+}

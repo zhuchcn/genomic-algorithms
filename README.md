@@ -1,6 +1,6 @@
 # Genomic Algorithms
 
-This is a collection of algorithms used in genomics, implemented with python.
+This is a collection of algorithms used in genomics, implemented with python and c++.
 
 ## Distance
 

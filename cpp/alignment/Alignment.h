@@ -26,6 +26,7 @@ private:
     std::string aligned_matches_;
 
 public:
+    static constexpr double _INFINITY = std::numeric_limits<double>::infinity();
     explicit Alignment(std::string seq1, std::string seq2):
         seq1_(" " + seq1), seq2_(" " + seq2), delta_(1), matrix_(),
         subMat_(__DEFAULT_SUBSTITUTE_MATRIX), aligned_seq1_(), 

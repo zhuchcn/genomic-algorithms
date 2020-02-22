@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <limits>
 
-const double _INFINITY = std::numeric_limits<double>::infinity();
 
 void SmithWaterman::align() {
     auto & matrix = this->matrix();
@@ -45,7 +44,7 @@ void SmithWaterman::trace_back() {
     std::string alseq1, alseq2, matches;
     bool stopFound = false;
 
-    int i = seq1->length(), j = seq2->length();
+    int i = seq1->length() - 1, j = seq2->length() -1 ;
     while (i > 0 || j > 0) {
         if(i > best_score_pos[0] || j > best_score_pos[1]){
             if(i - best_score_pos[0] > j - best_score_pos[1]) {
@@ -81,8 +80,8 @@ void SmithWaterman::trace_back() {
             matches.push_back(' ');
         } else {
             double diag = i > 0 && j > 0 ? matrix[i - 1][j - 1] : -_INFINITY;
-            double up = i > 0 ? matrix[i - 1][j - 1] : -_INFINITY;
-            double left = j > 0 ? matrix[i - 1][j - 1] : -_INFINITY;
+            double up = i > 0 ? matrix[i - 1][j] : -_INFINITY;
+            double left = j > 0 ? matrix[i][j - 1] : -_INFINITY;
             double best = std::max(diag, up);
             best = std::max(best, left);
 
