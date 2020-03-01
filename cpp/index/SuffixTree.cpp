@@ -1,5 +1,4 @@
 #include "SuffixTree.h"
-#include <iostream>
 
 SuffixTree::SuffixTree(std::string text) : rootNodePtr() {
     text += "$";

@@ -1,4 +1,11 @@
+/**
+ * A suffix tree implementation.
+ * 
+ * @author Chenghao Zhu <chhzhu@ucdavis.edu>
+ */
+
 #pragma once
+
 #include <unordered_map>
 #include <string>
 #include <vector>

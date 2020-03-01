@@ -3,6 +3,8 @@
 #include "../../catch/catch.hpp"
 #include "../Kmer.h"
 #include "../SuffixTree.h"
+#include "../SuffixArray.h"
+
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -25,6 +27,17 @@ TEST_CASE("Testing Suffix Tree", "[SuffixTree]") {
         SuffixTree st (text);
         REQUIRE(st.hasSubstring("TAACCTGCCC"));
         auto occs = st.query("TAACCTGCCC");
+        int expect = 18;
+        REQUIRE(find(occs.begin(), occs.end(), expect) != occs.end());
+    }
+}
+
+TEST_CASE("Testomg Siffix Array", "[SuffixArray]") {
+    SECTION("Test small test") {
+        string text = "TCCTGCAGCCTTGCTCCCTAACCTGCCCCACAGCCTTGCCTGGATTTCTATCTCCCTGG";
+        SuffixArray sa (text);
+        REQUIRE(sa.has("TAACCTGCCC"));
+        auto occs = sa.query("TAACCTGCCC");
         int expect = 18;
         REQUIRE(find(occs.begin(), occs.end(), expect) != occs.end());
     }

@@ -1,4 +1,11 @@
+/**
+ * A k-mer implementation.
+ * 
+ * @author Chenghao Zhu <chhzhu@ucdavis.edu>
+ */
+
 #pragma once
+
 #include <string>
 #include <vector>
 #include <unordered_map>
